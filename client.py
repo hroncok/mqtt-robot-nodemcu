@@ -9,6 +9,13 @@ from machine import Pin
 robot_id = ubinascii.hexlify(machine.unique_id())
 topic = b'/robot/' + robot_id
 
+def wait_for_user():
+    print("Press Ctrl-C to run Python code", end="")
+    for i in range(3):
+        time.sleep(1)
+        print(".", end="")
+    print("")
+
 def start_wifi():
     global topic
     sta_if = network.WLAN(network.STA_IF); sta_if.active(True)

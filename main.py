@@ -8,5 +8,6 @@ try:
 except ImportError:
     robot_name = 'another robot'
 
+client.wait_for_user()
 client.start_wifi()
 client.mqtt_drive(mqtt_host, robot_name=robot_name)
